@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "MainWindow.h"
 #include "ui_mainwindow.h"
 #include <QLabel>
 #include <QPixmap>
@@ -8,9 +8,7 @@
 #include <QFileDialog>
 #include <QStandardPaths>
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     picturePanel = new PicturePanelWidget(this);
@@ -53,7 +51,6 @@ void MainWindow::initMenu()
     connect(copyAction, &QAction::triggered, this, &MainWindow::onActionCopy);
     connect(pasteAction, &QAction::triggered, this, &MainWindow::onActionPaste);
     connect(aboutAction, &QAction::triggered, this, &MainWindow::onActionAbout);
-
 }
 
 void MainWindow::initToolBar()
@@ -115,10 +112,9 @@ void MainWindow::onActionOpen()
                                                  QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation),
                                                  tr("Picture Files(*.jpg)"));
 
-    if(!filePath.isEmpty())
-    {
-        emit openFileChosen(filePath);
-    }
+    if(filePath.isEmpty()) return;
+
+    emit openFileChosen(filePath);
 }
 
 void MainWindow::onActionSave()

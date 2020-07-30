@@ -5,7 +5,7 @@
 #include <QAction>
 #include <QDockWidget>
 
-#include "picturepanelwidget.h"
+#include "PicturePanelWidget.h"
 
 
 QT_BEGIN_NAMESPACE

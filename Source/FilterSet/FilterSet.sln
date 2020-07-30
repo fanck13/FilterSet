@@ -1,0 +1,34 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1169
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MainWindow", "MainWindow\MainWindow.vcxproj", "{785F44EB-EF9E-3622-AFE7-E9C727C3DE43}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3BC73F2A-F83A-3BEE-9EE9-CF530B3A048E} = {3BC73F2A-F83A-3BEE-9EE9-CF530B3A048E}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PictureReader", "PictureReader\PictureReader.vcxproj", "{3BC73F2A-F83A-3BEE-9EE9-CF530B3A048E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{785F44EB-EF9E-3622-AFE7-E9C727C3DE43}.Debug|x64.ActiveCfg = Debug|x64
+		{785F44EB-EF9E-3622-AFE7-E9C727C3DE43}.Debug|x64.Build.0 = Debug|x64
+		{785F44EB-EF9E-3622-AFE7-E9C727C3DE43}.Release|x64.ActiveCfg = Release|x64
+		{785F44EB-EF9E-3622-AFE7-E9C727C3DE43}.Release|x64.Build.0 = Release|x64
+		{3BC73F2A-F83A-3BEE-9EE9-CF530B3A048E}.Debug|x64.ActiveCfg = Debug|x64
+		{3BC73F2A-F83A-3BEE-9EE9-CF530B3A048E}.Debug|x64.Build.0 = Debug|x64
+		{3BC73F2A-F83A-3BEE-9EE9-CF530B3A048E}.Release|x64.ActiveCfg = Release|x64
+		{3BC73F2A-F83A-3BEE-9EE9-CF530B3A048E}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		Qt5Version = msvc2017_64
+		SolutionGuid = {AD4E05AD-AE90-4EB0-AB03-57FF157CA651}
+	EndGlobalSection
+EndGlobal

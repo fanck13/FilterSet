@@ -1,4 +1,4 @@
-#include "information.h"
+#include "Information.h"
 
 Information::Information(QWidget *parent):QMessageBox(parent)
 {

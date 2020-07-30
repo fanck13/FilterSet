@@ -3,6 +3,8 @@
 
 #include <QWidget>
 
+#include "PictureReader.h"
+
 class PicturePanelWidget : public QWidget
 {
     Q_OBJECT
@@ -14,6 +16,9 @@ public slots:
     void updatePicture(const QString& filePath );
 
 signals:
+
+private:
+    PictureReader reader;
 
 };
 
