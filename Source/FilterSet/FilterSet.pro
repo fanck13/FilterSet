@@ -16,11 +16,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    information.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    picturepanelwidget.cpp
 
 HEADERS += \
-    mainwindow.h
+    information.h \
+    mainwindow.h \
+    picturepanelwidget.h
 
 FORMS += \
     mainwindow.ui
@@ -29,3 +33,16 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+win32:CONFIG(release, debug|release): LIBS += -LC:/opencv/build/x64/vc15/lib/ -lopencv_world440
+else:win32:CONFIG(debug, debug|release): LIBS += -LC:/opencv/build/x64/vc15/lib/ -lopencv_world440d
+else:unix: LIBS += -LC:/opencv/build/x64/vc15/lib/ -lopencv_world440
+
+INCLUDEPATH += C:/opencv/build/include
+DEPENDPATH += C:/opencv/build/include
+
+win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += C:/opencv/build/x64/vc15/lib/libopencv_world440.a
+else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += C:/opencv/build/x64/vc15/lib/libopencv_world440d.a
+else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += C:/opencv/build/x64/vc15/lib/opencv_world440.lib
+else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += C:/opencv/build/x64/vc15/lib/opencv_world440d.lib
+else:unix: PRE_TARGETDEPS += C:/opencv/build/x64/vc15/lib/libopencv_world440.a

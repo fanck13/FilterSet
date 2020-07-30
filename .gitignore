@@ -53,3 +53,8 @@ compile_commands.json
 
 debug/
 release/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+.vs/
+*.vcxproj.user

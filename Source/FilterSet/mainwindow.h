@@ -2,6 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QAction>
+#include <QDockWidget>
+
+#include "picturepanelwidget.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -16,6 +21,26 @@ public:
     ~MainWindow();
 
 private:
+    void initMenu();
+    void initToolBar();
+    void initStatusBar();
+    void initDockWidgets();
+    void initActions();
+
+private slots:
+    void onActionOpen();
+    void onActionSave();
+    void onActionCopy();
+    void onActionPaste();
+    void onActionAbout();
+
+signals:
+    void openFileChosen(const QString& filePath);
+
+private:
     Ui::MainWindow *ui;
+    PicturePanelWidget *picturePanel;
+    QMap<QString, QAction*> actionMap;
+    QMap<QString, QDockWidget*> dockWidgetMap;
 };
 #endif // MAINWINDOW_H
