@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -16,12 +16,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    DataGridView.cpp \
     Information.cpp \
     main.cpp \
     MainWindow.cpp \
     PicturePanelWidget.cpp
 
 HEADERS += \
+    DataGridView.h \
     Information.h \
     MainWindow.h \
     PicturePanelWidget.h
@@ -40,3 +42,6 @@ else:unix: LIBS += -L$$OUT_PWD/../PictureReader/ -lPictureReader
 
 INCLUDEPATH += $$PWD/../PictureReader
 DEPENDPATH += $$PWD/../PictureReader
+
+RESOURCES += \
+    Resource.qrc

@@ -8,6 +8,11 @@
 #include <QFileDialog>
 #include <QStandardPaths>
 
+#include "LineChartView.h"
+#include "DataGridView.h"
+
+#include "CommandPrompt.h"
+
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
@@ -95,7 +100,9 @@ void MainWindow::initActions()
 
 void MainWindow::initDockWidgets()
 {
-    QDockWidget* dock1 = new QDockWidget(tr("Dock1"), this);
+    auto dock1 = new DataGridView(this);
+    dock1->setWindowTitle(tr("line graph"));
+    //QDockWidget* dock1 = new QDockWidget(tr("Dock1"), this);
     dock1->setFeatures(QDockWidget::AllDockWidgetFeatures);
     dock1->setAllowedAreas(Qt::AllDockWidgetAreas);
     //dock1->setMinimumSize(600, 600);
@@ -103,6 +110,14 @@ void MainWindow::initDockWidgets()
     dockWidgetMap.insert(QString("Dock1"), dock1);
 
     this->addDockWidget(Qt::LeftDockWidgetArea, dock1);
+
+    auto commandPrompt = new CommandPrompt(this);
+    commandPrompt->setFeatures(QDockWidget::AllDockWidgetFeatures);
+    commandPrompt->setAllowedAreas(Qt::AllDockWidgetAreas);
+
+    dockWidgetMap.insert(QString("CommandPrompt"), commandPrompt);
+    this->addDockWidget(Qt::BottomDockWidgetArea, commandPrompt);
+
 }
 
 void MainWindow::onActionOpen()

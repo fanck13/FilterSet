@@ -59,8 +59,8 @@
     <IgnoreImportLibrary>true</IgnoreImportLibrary>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(SolutionDir)..\..\Build\Release\</OutDir>
-    <IntDir>$(SolutionDir)..\..\Build\Release\</IntDir>
+    <OutDir>release\</OutDir>
+    <IntDir>release\</IntDir>
     <TargetName>PictureReader</TargetName>
     <IgnoreImportLibrary>true</IgnoreImportLibrary>
     <LinkIncremental>false</LinkIncremental>
