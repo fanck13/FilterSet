@@ -8,10 +8,10 @@
 #include <QFileDialog>
 #include <QStandardPaths>
 
-#include "LineChartView.h"
-#include "DataGridView.h"
+#include "Components/LineChartView.h"
+#include "Components/DataGridView.h"
 
-#include "CommandPrompt.h"
+#include "Components/CommandPrompt.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
@@ -111,12 +111,15 @@ void MainWindow::initDockWidgets()
 
     this->addDockWidget(Qt::LeftDockWidgetArea, dock1);
 
-    auto commandPrompt = new CommandPrompt(this);
-    commandPrompt->setFeatures(QDockWidget::AllDockWidgetFeatures);
-    commandPrompt->setAllowedAreas(Qt::AllDockWidgetAreas);
+    auto command = new QDockWidget(this);
 
-    dockWidgetMap.insert(QString("CommandPrompt"), commandPrompt);
-    this->addDockWidget(Qt::BottomDockWidgetArea, commandPrompt);
+    auto commandPrompt = new CommandPrompt(this);
+    command->setFeatures(QDockWidget::AllDockWidgetFeatures);
+    command->setAllowedAreas(Qt::AllDockWidgetAreas);
+    command->setWidget(commandPrompt);
+    
+    dockWidgetMap.insert(QString("CommandPrompt"), command);
+    this->addDockWidget(Qt::BottomDockWidgetArea, command);
 
 }
 

@@ -201,24 +201,13 @@
     </QtUic>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CommandPrompt.cpp" />
-    <ClCompile Include="DataGridView.cpp" />
-    <ClCompile Include="Information.cpp" />
-    <ClCompile Include="LineChartView.cpp" />
-    <ClCompile Include="MainWindow.cpp" />
-    <ClCompile Include="PicturePanelWidget.cpp" />
+    <ClCompile Include="Components\CommandPrompt.cpp" />
+    <ClCompile Include="Components\DataGridView.cpp" />
+    <ClCompile Include="Components\Information.cpp" />
+    <ClCompile Include="Components\LineChartView.cpp" />
+    <ClCompile Include="Components\PicturePanelWidget.cpp" />
     <ClCompile Include="main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="LineChartView.h" />
-    <QtMoc Include="DataGridView.h">
-    </QtMoc>
-    <QtMoc Include="CommandPrompt.h" />
-    <ClInclude Include="Information.h" />
-    <QtMoc Include="MainWindow.h">
-    </QtMoc>
-    <QtMoc Include="PicturePanelWidget.h">
-    </QtMoc>
+    <ClCompile Include="MainWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="debug\moc_predefs.h.cbt">
@@ -246,6 +235,18 @@
     <QtRcc Include="Resource.qrc">
     </QtRcc>
     <None Include="Resource\images\splash\elephants.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Components\CommandPrompt.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Components\DataGridView.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Components\Information.h" />
+    <QtMoc Include="MainWindow.h" />
+    <QtMoc Include="Components\PicturePanelWidget.h" />
+    <QtMoc Include="Components\LineChartView.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
